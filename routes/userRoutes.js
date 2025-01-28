@@ -97,6 +97,18 @@ router.put('/profile/password', jwtAuthMiddleware, async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+router.get('/', async (req, res) => {
+
+    try {
+        const data = await User.find();
+        console.log('User fetched');
+        res.status(200).json(data);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: 'internal server error' })
+    }
+})
+
 
 
 module.exports = router
