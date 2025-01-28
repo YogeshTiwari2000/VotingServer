@@ -3,7 +3,6 @@ require('dotenv').config();
 
 // const mongoURL = 'mongodb://localhost:27017/votersDB';
 const mongoURL = process.env.Atlas_connection // For Atlas
-
 // seting up a mongoconnection
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
